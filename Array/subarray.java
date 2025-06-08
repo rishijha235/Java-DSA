@@ -9,7 +9,7 @@ public class subarray {
         int neg_cnt = 0;
         
         //read elements and store in array
-        for(int i=0; i<n; i++){
+        for(int i = 0; i<n; i++){
             arr[i] = sc.nextInt();
         }
         
@@ -21,7 +21,7 @@ public class subarray {
                 neg_cnt++;
             } 
             //find the count sum of subarrays
-            for(int  j=i+1; j<n; j++){
+            for(int  j = i+1; j<n; j++){
                 sum += arr[j];
                 if(sum < 0){
                     neg_cnt++;
