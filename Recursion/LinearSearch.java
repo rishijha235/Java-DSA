@@ -1,6 +1,8 @@
+import java.util.ArrayList;
+
 public class LinearSearch {
     public static void main(String[] args) {
-        int[] arr ={15, 18, 13, 26, -5, 0, 11, 9};
+        int[] arr ={9, 18, 13, 26, -5, 0, 11, 9};
         int target = 9;
         int result = LS(arr, target, 0);
         if(result == -1) {
@@ -8,7 +10,7 @@ public class LinearSearch {
         }
         else{ 
             System.out.println("Element found at index: " + result);
-        }   
+        }        
     }
 
     // Linear search using recursion
@@ -18,4 +20,5 @@ public class LinearSearch {
         }
         return arr[index] == target ? index : LS(arr, target, index + 1);
     }
+
 }
