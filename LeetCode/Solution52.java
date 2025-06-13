@@ -1,35 +1,31 @@
-import java.util.List;
-import java.util.ArrayList;
-
-//Backtracking
-public class Solution51 {
+public class Solution52 {
     public static void main(String[] args) {
-        System.out.println(solveNQueens(4));
+        System.out.println(totalNQueens(5));;
     }
 
-    public static List<List<String>> solveNQueens(int n) {
-        List<List<String>> solutions = new ArrayList<>();
+    public static int totalNQueens(int n) {
         boolean[][] board = new boolean[n][n];
-        queens(board, 0, solutions);
-        return solutions;
+        return queens(board, 0);
     }
 
-    private static void queens(boolean[][] board, int row, List<List<String>> solutions) {
+    static int queens(boolean[][] board, int row) {
         if(row == board.length) {
-            // All queens are placed successfully
-            solutions.add(display(board));
-            return;
+            // All queens are placed successfully(we found one of our answers)
+            return 1;
         }
+
+        int count = 0; // To count the number of ways to place queens
 
         // placing the queen and checking for every row and col
         for(int col = 0; col < board.length; col++) {
             //place the queen if it is safe
             if(isSafe(board, row, col)) {
                 board[row][col] = true; // Place the queen at (row, col)
-                queens(board, row + 1, solutions); // Recursively place the next queen
+                count += queens(board, row + 1); // Recursively place the next queen
                 board[row][col] = false; // Backtrack: remove the queen from the current position
             }
         }
+        return count;
     }
 
     private static boolean isSafe(boolean[][] board, int row, int col) {
@@ -56,17 +52,5 @@ public class Solution51 {
             }
         }
         return true; // The position is safe to place a queen
-    }
-
-    private static List<String> display(boolean[][] board) {
-        List<String> res = new ArrayList<>();
-        for (boolean[] row : board) {
-            StringBuilder sb = new StringBuilder();
-            for (boolean cell : row) {
-                sb.append(cell ? 'Q' : '.');
-            }
-            res.add(sb.toString());
-        }
-        return res;
     }
 }
