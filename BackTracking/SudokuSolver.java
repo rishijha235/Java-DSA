@@ -48,7 +48,7 @@ public class SudokuSolver {
             return true;
         }
 
-        //backtrack
+        // Try numbers from 1 to 9 in the empty cell
         for(int number = 1; number <= 9; number++) {
             if(isSafe(board, row, col, number)) {
                 board[row][col] = number; // place the number
