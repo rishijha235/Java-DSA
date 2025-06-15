@@ -67,15 +67,15 @@ public class SudokuSolver {
         // Checking row
         for(int i = 0; i < board.length; i++) {
             //check if the num is in the row
-            if(board[row][col] == num) {
+            if(board[row][i] == num) {
                 return false;
             }
         }
 
         // Checking column
-        for(int i = 0; i < board.length; i++) {
+        for(int[] nums : board) {
             //check if the num is in the column
-            if(board[i][col] == num) {
+            if(nums[col] == num) {
                 return false;
             }
         }
