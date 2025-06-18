@@ -18,6 +18,7 @@ public class QueueMain {
 
         System.out.println(queue.remove()); // Removes the head of the queue and returns it
         queue.insert(7);
+        
         queue.display();
     }
     
