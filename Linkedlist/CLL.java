@@ -11,7 +11,7 @@ public class CLL {
         this.tail = null;
     }
 
-    //inserting at the beginning of the linked list
+    //inserting at the beginning of the linked list (head)
     public void insertFirst(int val){
         Node node = new Node(val);
         if(head == null){
@@ -25,7 +25,7 @@ public class CLL {
         head = node;
     }
 
-    //inserting at the end of the linked list
+    //inserting at the end of the linked list (tail)
     public void insert(int val){
         Node node = new Node(val);
         if(head == null){
