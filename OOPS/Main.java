@@ -38,7 +38,11 @@ public class Main {
 
         // by default, the array will contain null values
         System.out.println(Arrays.toString(students));
-        
+
+        //
+        Student student3 = new Student();
+        System.out.println("Student3 Name: " + student3.name);
+
     }
 }
 
@@ -66,9 +70,11 @@ public class Main {
         }
 
         // Default constructor
-        Student() {
-            // this.rollNum = 0;
-            // this.name = "Unknown";
-            // this.marks = 0.0f;
+        // Student() {
+        // }
+
+        //this is how you call a constructor from another constructor
+        // internally it is like : new Student();
+        Student () {
         }
     }
