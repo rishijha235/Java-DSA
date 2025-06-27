@@ -4,15 +4,20 @@ import java.util.Scanner;
 
 public class BinaryTree {
 
-        public BinaryTree() {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        BinaryTree tree = new BinaryTree();
+        tree.populate(sc);
+        System.out.println("Binary Tree:");
+        tree.prettyDisplay();
+    }
 
-        }
-        private static class Node {
+    public BinaryTree() {
+    }
+    private static class Node {
         int value;
         Node left;
         Node right;
-
-        // Constructor to create a new node with a given value
         public Node(int value) {
             this.value = value;
         }
@@ -82,11 +87,46 @@ public class BinaryTree {
         prettyDisplay(node.left, level + 1);
     }
 
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        BinaryTree tree = new BinaryTree();
-        tree.populate(sc);
-        System.out.println("Binary Tree:");
-        tree.prettyDisplay();
+
+    //Traversal methods
+    // 1. pre-order traversal
+    public void preOrder() {
+        preOrder(root);
+    }
+    private void preOrder(Node node) {
+        if (node == null) {
+            return;
+        }
+        System.out.println(node.value + " ");
+        preOrder(node.left);
+        preOrder(node.right);
+    }
+
+
+    // 2. In-order traversal
+    public void inOrder() {
+        inOrder(root);
+    }
+    private void inOrder(Node node) {
+        if (node == null) {
+            return;
+        }
+        inOrder(node.left);
+        System.out.println(node.value + " ");
+        inOrder(node.right);
+    }
+
+
+    // 3. post-order traversal
+    public void postOrder() {
+        postOrder(root);
+    }
+    private void postOrder(Node node) {
+        if (node == null) {
+            return;
+        }
+        postOrder(node.left);
+        postOrder(node.right);
+        System.out.println(node.value + " ");
     }
 }
