@@ -24,7 +24,7 @@ class SegmentTree {
 
   private Node constructTree(int[] arr, int start, int end) {
     if(start == end) {
-      // leaf node
+      // we are at the leaf node
       Node leaf = new Node(start, end);
       leaf.data = arr[start];
       return leaf;
@@ -87,6 +87,7 @@ class SegmentTree {
       // completely outside
       return 0;
     } else {
+      // overlapping
       return this.query(node.left, qsi, qei) + this.query(node.right, qsi, qei);
     }
   }
