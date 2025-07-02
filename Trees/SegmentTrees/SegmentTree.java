@@ -51,7 +51,7 @@ class SegmentTree {
     if(node.left != null) {
       str = str + "Interval=[" + node.left.startInterval + "-" + node.left.endInterval + "] and data: " + node.left.data + " => "; 
     } else {
-      str = str + "No left child";
+      str = str + "No left child => ";
     }
 
     // for current node
