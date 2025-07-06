@@ -26,7 +26,6 @@ public class LevelOrderSuccessor {
         //    / \   /
         //   4   5 6
 
-        // Since javax.swing.tree.TreeNode is not suitable for this, let's define a simple TreeNode class:
 
         // Build the tree
         TreeNode root = new TreeNode(1);
@@ -35,10 +34,6 @@ public class LevelOrderSuccessor {
         root.left.left = new TreeNode(4);
         root.left.right = new TreeNode(5);
         root.right.left = new TreeNode(6);
-
-        // Since your findSuccessor method uses javax.swing.tree.TreeNode,
-        // you need to update it to use this TreeNode class.
-        // For demonstration, here's a compatible findSuccessor method:
 
         TreeNode successor = findSuccessor(root, 5);
         if (successor != null) {
