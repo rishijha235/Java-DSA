@@ -53,7 +53,7 @@ public class BinaryTree {
     }
 
     // public void display() {
-    //     display(root, "");
+    //     display(root, " ");
     // }
  
     // private void display(Node node, String indent) {
