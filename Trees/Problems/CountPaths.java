@@ -37,3 +37,6 @@ public class CountPaths {
         return count;
     }
 }
+
+// Time Complexity: O(n^2) if the tree is skewed, O(n log n) if balanced
+// Space Complexity: O(n) if the tree is skewed, O(log n) if balanced
