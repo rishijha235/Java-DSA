@@ -2,6 +2,17 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.ListIterator;
 
+class Node {
+    int val;
+    Node left, right;
+
+    Node(int val) {
+        this.val = val;
+        this.left = null;
+        this.right = null;
+    }
+}
+
 public class CountPaths {
     
     public static int countPaths(Node node, int sum) {
@@ -36,7 +47,35 @@ public class CountPaths {
 
         return count;
     }
-}
 
+    public static void main(String[] args) {
+        /*
+               10
+              /  \
+             5   -3
+            / \    \
+           3   2    11
+          / \   \
+         3  -2   1
+        */
+
+        Node root = new Node(10);
+        root.left = new Node(5);
+        root.right = new Node(-3);
+
+        root.left.left = new Node(3);
+        root.left.right = new Node(2);
+        root.right.right = new Node(11);
+
+        root.left.left.left = new Node(3);
+        root.left.left.right = new Node(-2);
+        root.left.right.right = new Node(1);
+
+        int targetSum = 8;
+        int result = countPaths(root, targetSum);
+
+        System.out.println("Number of paths with sum " + targetSum + " = " + result);
+    }
+}
 // Time Complexity: O(n^2) if the tree is skewed, O(n log n) if balanced
 // Space Complexity: O(n) if the tree is skewed, O(log n) if balanced
