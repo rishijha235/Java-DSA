@@ -14,7 +14,7 @@ class Node {
 }
 
 public class CountPaths {
-    
+    // count all path with the given sum from anywhere (from root to leaf or middle)
     public static int countPaths(Node node, int sum) {
         List<Integer> path = new LinkedList<>();
         return helper(node, sum, path);
