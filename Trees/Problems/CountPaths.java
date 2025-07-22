@@ -42,7 +42,7 @@ public class CountPaths {
 
         count += helper(node.left, sum, path) + helper(node.right, sum, path);
 
-        //backtrrack
+        //backtrack
         path.remove(path.size() - 1);
 
         return count;
